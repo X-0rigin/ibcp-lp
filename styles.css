@@ -1,0 +1,1522 @@
+﻿/* ==========================================================================
+   India Business Case Programme (IBCP) Microsite - Master Stylesheet
+   Matching standard mockup design UI exactly
+   ========================================================================== */
+
+/* --- CSS Variables & Design System --- */
+:root {
+  --hsbc-red: #DB0011;
+  --hsbc-red-hover: #B8000E;
+  --hsbc-red-light: rgba(219, 0, 17, 0.08);
+  --hsbc-blue: #0050A0;
+
+  --bg-dark: #0A0C0F;
+  --bg-grey: #DDDDDD;
+  --bg-white: #FFFFFF;
+  --bg-footer: #E0E0E0;
+
+  --text-dark: #1E2024;
+  --text-muted: #5A606A;
+  --text-light: #F9FAFB;
+  --text-red: #DB0011;
+
+  --font-primary: 'Lato', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-heading: 'Lato', 'Inter', sans-serif;
+
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --radius-pill: 50px;
+
+  --shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.08);
+  --shadow-lg: 0 16px 40px rgba(0, 0, 0, 0.12);
+  --shadow-glow: 0 0 20px rgba(219, 0, 17, 0.3);
+
+  --transition-fast: 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-normal: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-bounce: 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* --- Base & Reset --- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+  background-color: var(--bg-white);
+  color: var(--text-dark);
+  font-family: var(--font-primary);
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  overflow-x: hidden;
+  line-height: 1.6;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+  font-family: inherit;
+}
+
+/* --- Section Container & Titles --- */
+.section-container {
+  max-width: 1140px;
+  margin: 0 auto;
+}
+
+.section-title {
+  font-family: var(--font-heading);
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin-bottom: 40px;
+  position: relative;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-left {
+  text-align: left;
+}
+
+/* --- 1. HERO BANNER SECTION --- */
+.hero-section {
+  position: relative;
+  min-height: 560px;
+  background: url('image/herobanner1.png') center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  color: #FFF;
+  padding: 32px 0 40px;
+  overflow: hidden;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg,
+      rgba(10, 12, 15, 0.45) 0%,
+      rgba(10, 12, 15, 0.25) 50%,
+      rgba(10, 12, 15, 0.55) 100%);
+  z-index: 1;
+}
+
+.hero-container {
+  position: relative;
+  z-index: 2;
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 32px;
+  width: 100%;
+  min-height: 660px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* Top Logos Bar (Top Right) */
+.hero-top-logos {
+  display: flex;
+  justify-content: flex-end;
+  width: 50%;
+  position: absolute;
+  top: 20px;
+  right: 0;
+}
+
+.partner-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 20px;
+  background: rgba(255, 255, 255, 0.95);
+  padding: 10px 20px;
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-md);
+  color: var(--text-dark);
+}
+
+.partner-label {
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: #6B7280;
+}
+
+.hsbc-brand img {
+  height: 40px;
+  width: auto;
+}
+
+.sattva-brand img {
+  height: 40px;
+  width: auto;
+}
+
+.united-brand img {
+  height: 40px;
+  width: auto;
+}
+
+.v-divider {
+  width: 1px;
+  height: 36px;
+  background: #989797;
+}
+
+/* Hero Text Positioned Top Left */
+.hero-header-text {
+  text-align: left;
+  max-width: 650px;
+  margin-top: 20px;
+}
+
+.hero-title {
+  font-family: var(--font-heading);
+  font-size: 3.9rem;
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: -0.5px;
+  color: #FFFFFF;
+  text-shadow: 0 4px 16px rgba(0, 0, 0, 0.7);
+}
+
+.hero-subtitle {
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: #E5E7EB;
+  /* letter-spacing: 1px; */
+  text-transform: capitalize;
+  margin-top: 8px;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
+}
+
+/* Bottom Right Register Button */
+.hero-bottom-action {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+  margin-top: auto;
+  padding-top: 24px;
+}
+
+.btn-register-hero {
+  background: var(--hsbc-red);
+  color: #FFF;
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 1.05rem;
+  letter-spacing: 3px;
+  padding: 11px 52px;
+  clip-path: polygon(18px 0%, 100% 0%, calc(100% - 18px) 100%, 0% 100%);
+  transition: all var(--transition-fast);
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.4);
+  border: none;
+
+  transition-property: color, background-color, border-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-text-decoration-color, -webkit-backdrop-filter;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-text-decoration-color, -webkit-backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+  clip-path: polygon(10% 0%, 90% 0%, 100% 50%, 90% 100%, 10% 100%, 0% 50%);
+  padding-left: 2.5rem;
+  padding-right: 2.5rem;
+}
+
+.btn-register-hero:hover {
+  background: var(--hsbc-red-hover);
+  box-shadow: 0 8px 24px rgba(219, 0, 17, 0.5);
+}
+
+/* --- 2. INTRO & OVERVIEW SECTION (SECTION 2) --- */
+.intro-section {
+  padding: 60px 24px;
+  background: var(--bg-white);
+  text-align: left;
+}
+
+.intro-content-centered {
+  max-width: 880px;
+  margin: 0;
+  text-align: left;
+}
+
+.intro-headline {
+  font-family: var(--font-heading);
+  font-size: 2.2rem;
+  font-weight: 700;
+  line-height: 1.6;
+  color: var(--text-dark);
+  margin-bottom: 28px;
+  text-align: left;
+}
+
+/* Highlight Badges */
+.highlight-badge {
+  display: inline;
+  padding: 4px 14px;
+  border-radius: var(--radius-sm);
+  color: #FFF;
+  font-weight: 700;
+  font-size: inherit;
+  vertical-align: baseline;
+  white-space: nowrap;
+  margin: 0 4px;
+  letter-spacing: 1px;
+}
+
+/* Helper to hide br on desktop and show on mobile */
+.desktop-hide-br {
+  display: none;
+}
+
+.badge-red {
+  background: var(--hsbc-red);
+}
+
+.badge-blue {
+  background: var(--hsbc-blue);
+}
+
+.intro-paragraphs {
+  text-align: left;
+  max-width: 900px;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  font-size: 1rem;
+  color: var(--text-muted);
+  line-height: 1.7;
+}
+
+.intro-paragraphs strong {
+  color: var(--text-dark);
+}
+
+.intro-paragraphs p {
+  color: #000;
+  font-size: 18.5px;
+}
+
+/* --- 2. BENEFITS SECTION ("What's in it For You?") --- */
+.benefits-section {
+  background: #ddd;
+  padding: 70px 24px;
+}
+
+.benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 28px;
+}
+
+.benefit-card {
+  background: var(--bg-white);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+  display: flex;
+  flex-direction: column;
+}
+
+.benefit-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-lg);
+}
+
+.card-image-wrap {
+  position: relative;
+  height: 350px;
+  overflow: hidden;
+}
+
+.card-image-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-normal);
+}
+
+.benefit-card:hover .card-image-wrap img {
+  transform: scale(1.05);
+}
+
+.card-content {
+  padding: 24px 26px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.card-title {
+  font-family: var(--font-heading);
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--hsbc-red);
+  margin-bottom: 8px;
+  line-height: 1.35;
+}
+
+.card-desc {
+  font-size: 0.95rem;
+  color: #0A0C0F;
+  line-height: 1.6;
+}
+
+/* --- 3. TIMELINE SECTION (SECTION 3 - Center Vertical Line & Dots) --- */
+.timeline-section {
+  padding: 80px 24px;
+  background: var(--bg-white);
+  position: relative;
+}
+
+.timeline-wrapper {
+  position: relative;
+  padding: 30px 0;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* Center Pink/Red Vertical Line Track */
+.timeline-line-track {
+  position: absolute;
+  top: 15px;
+  bottom: 15px;
+  left: 50%;
+  width: 2px;
+  background: #FCA5A5;
+  transform: translateX(-50%);
+  z-index: 1;
+}
+
+.timeline-line-progress {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 0%;
+  background: var(--hsbc-red);
+  transition: height 0.1s linear;
+}
+
+/* Alternating Timeline Items */
+.timeline-item {
+  display: flex;
+  align-items: center;
+  position: relative;
+  margin-bottom: 60px;
+  z-index: 2;
+  width: 100%;
+}
+
+.timeline-item:last-child {
+  margin-bottom: 0;
+}
+
+/* Item Left Layout — text right side, image left side, node at exact center */
+.item-left {
+  flex-direction: row;
+}
+
+.item-left .timeline-content {
+  width: 44%;
+  text-align: right;
+  padding-right: 40px;
+  position: relative;
+}
+
+.item-left .timeline-media {
+  width: 44%;
+  padding-left: 40px;
+  margin-left: auto;
+}
+
+/* Item Right Layout — image left side, text right side, node at exact center */
+.item-right {
+  flex-direction: row;
+}
+
+.item-right .timeline-media {
+  width: 44%;
+  text-align: right;
+  padding-right: 40px;
+}
+
+.item-right .timeline-content {
+  width: 44%;
+  text-align: left;
+  padding-left: 40px;
+  margin-left: auto;
+  position: relative;
+}
+
+/* ── TIMELINE NODE & CONNECTOR ─────────────────────────────────────────────
+   DOT appears at the TEXT/CONTENT edge (not at the center line).
+   LINE extends from the dot toward the center vertical line.
+
+   Left item visual:  [TEXT] ●────────────── │ (center)
+   Right item visual: (center) │ ────────────●  [TEXT]
+   ─────────────────────────────────────────────────────────────────────────── */
+
+/* Base node: horizontal connector line spanning gap from content edge → center */
+.timeline-node {
+  position: absolute;
+  top: 50%;
+  height: 2px;
+  background: #767676;
+  transform: translateY(-50%);
+  z-index: 4;
+}
+
+/* LEFT ITEM: line starts at content right edge (44%) and ends at center (50%) */
+.item-left .timeline-node {
+  left: 45%;
+  /* content right edge */
+  right: 50%;
+  /* stops exactly at center — responsive at any width */
+}
+
+/* Dot for LEFT items: circle at the LEFT end of the line (content/text side) */
+.item-left .timeline-node::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--hsbc-red);
+  box-shadow: 0 0 0 2px #fff;
+  z-index: 5;
+}
+
+/* RIGHT ITEM: line starts at center (50%) and ends at content left edge (~56%) */
+.item-right .timeline-node {
+  left: 50%;
+  /* starts at center */
+  right: 45%;
+  /* ends at content left edge — responsive at any width */
+}
+
+/* Dot for RIGHT items: circle at the RIGHT end of the line (content/text side) */
+.item-right .timeline-node::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translate(50%, -50%);
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--hsbc-red);
+  box-shadow: 0 0 0 2px #fff;
+  z-index: 5;
+}
+
+/* node-dot div (HTML): hidden — dot is now created via CSS pseudo-elements above */
+.node-dot {
+  display: none;
+}
+
+/* Remove old content-based connector pseudo-elements — connector is now on .timeline-node */
+.item-left .timeline-content::after,
+.item-right .timeline-content::before {
+  display: none;
+}
+
+/* Timeline Typography & Media Styling */
+.timeline-title {
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  font-weight: 900;
+  letter-spacing: 0.8px;
+  color: var(--text-dark);
+  text-transform: uppercase;
+  margin-bottom: 4px;
+  line-height: 1.3;
+}
+
+.timeline-title.red-title {
+  color: var(--hsbc-red);
+}
+
+.timeline-title.bold-dark {
+  font-weight: 900;
+  color: var(--text-dark);
+}
+
+.timeline-dates {
+  display: block;
+  font-size: 14px;
+  font-weight: 500;
+  color: #6B7280;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+  margin-bottom: 4px;
+}
+
+.timeline-desc {
+  font-family: var(--font-primary);
+  font-size: 14px;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+.media-box {
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  display: inline-block;
+  max-width: 240px;
+  transition: transform var(--transition-fast);
+}
+
+.media-box img {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+  display: block;
+}
+
+.timeline-item:hover .media-box {
+  transform: scale(1.03);
+}
+
+/* --- 4. VIDEO GLIMPSES SECTION --- */
+.glimpses-section {
+  background: var(--bg-grey);
+  padding: 80px 24px;
+}
+
+.video-preview-card {
+  position: relative;
+  max-width: 960px;
+  margin: 0 auto;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  background: var(--bg-white);
+  cursor: pointer;
+  transition: transform var(--transition-bounce), box-shadow var(--transition-fast);
+}
+
+.video-preview-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-lg);
+}
+
+.video-cover-img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.video-play-zone {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0);
+}
+
+.btn-play-trigger {
+  width: 72px;
+  height: 72px;
+  background: #000;
+  color: #FFF;
+  border-radius: var(--radius-md);
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+  transition: transform var(--transition-bounce), background var(--transition-fast);
+}
+
+.video-preview-card:hover .btn-play-trigger {
+  background: var(--hsbc-red);
+  transform: scale(1.1);
+}
+
+/* --- 5. FAQ SECTION (Bootstrap Accordion) --- */
+.faq-section {
+  background: var(--bg-white);
+  padding: 80px 24px;
+}
+
+.faq-accordion-list .accordion-item.faq-item {
+  border: none;
+  border-bottom: 1px solid #E5E7EB;
+  border-radius: 0 !important;
+  background: transparent;
+}
+
+.faq-accordion-list .accordion-item.faq-item:last-child {
+  border-bottom: none;
+}
+
+.faq-accordion-list .faq-question-btn {
+  background: transparent;
+  font-family: var(--font-primary);
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--text-dark);
+  padding: 20px 0;
+  box-shadow: none !important;
+  border-radius: 0 !important;
+}
+
+.faq-accordion-list .faq-question-btn:not(.collapsed) {
+  color: var(--hsbc-red);
+  background: transparent;
+  box-shadow: none !important;
+}
+
+/* Hide default Bootstrap chevron arrow */
+.faq-accordion-list .faq-question-btn::after {
+  display: none;
+}
+
+/* Custom plus/minus icon using ::before on a span we'll add via CSS */
+.faq-accordion-list .faq-question-btn {
+  position: relative;
+  padding-right: 36px;
+}
+
+/* Plus icon on collapsed state */
+.faq-accordion-list .faq-question-btn.collapsed .faq-icon::before {
+  content: '+';
+}
+
+/* Minus icon on expanded state */
+.faq-accordion-list .faq-question-btn:not(.collapsed) .faq-icon::before {
+  content: '\2212';
+}
+
+.faq-icon {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--hsbc-red);
+  font-size: 1.4rem;
+  font-weight: 400;
+  line-height: 1;
+  pointer-events: none;
+}
+
+.faq-accordion-list {
+  width: 90%;
+}
+
+.faq-accordion-list .accordion-body.faq-answer-content {
+  padding: 0 0 20px 0;
+  background: transparent;
+}
+
+.faq-accordion-list .faq-answer-content p {
+  font-size: 0.95rem;
+  color: #000;
+  line-height: 1.65;
+  margin: 0;
+}
+
+.faq-list {
+  padding-left: 20px;
+  margin: 8px 0 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.faq-list li {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  line-height: 1.65;
+  padding-left: 4px;
+}
+
+.faq-list li::marker {
+  color: var(--hsbc-red);
+  font-size: 1rem;
+}
+
+.faq-subheading {
+  font-size: 0.95rem;
+  color: var(--text-dark);
+  margin-bottom: 4px;
+}
+
+/* --- 6. FOOTER SECTION & REGISTER BUTTON --- */
+.main-footer {
+  background: var(--bg-footer);
+  padding: 32px 24px 20px;
+  border-top: none;
+}
+
+.footer-container {
+  max-width: 1140px;
+  margin: 0 auto;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 24px;
+  /* padding-bottom: 24px; */
+}
+
+.footer-logos-group {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  padding-top: 4px;
+}
+
+.f-supp {
+  display: block;
+  font-size: 0.65rem;
+  color: var(--text-muted);
+  font-weight: 600;
+}
+
+.hsbc-f img {
+  height: 28px;
+  width: auto;
+}
+
+.f-divider {
+  width: 1px;
+  height: 40px;
+  background: #2a2d31;
+}
+
+.f-partner {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 4px;
+}
+
+.f-partner img {
+  height: 36px;
+  width: auto;
+  display: block;
+}
+
+.hsbc-f {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.hsbc-logo-img {
+  height: 55px !important;
+}
+
+.sattva-logo-img {
+  height: 50px !important;
+}
+
+.united-logo-img {
+  height: 50px !important;
+}
+
+/* Custom QR Code Display */
+.footer-qr-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+  align-self: flex-start;
+}
+
+.footer-qr-img {
+  height: 150px;
+  width: auto;
+  display: block;
+  /* border-radius: var(--radius-sm); */
+}
+
+/* Footer Tagline & Button */
+.footer-cta-group {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  align-self: flex-start;
+  gap: 12px;
+}
+
+.footer-tagline {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 1.5rem;
+  line-height: 1.3;
+  color: var(--text-dark);
+  text-align: right;
+  margin: 0 0 30px 0;
+}
+
+/* Red Register Button in Footer */
+.btn-register-footer {
+  background: var(--hsbc-red);
+  color: #FFF;
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 1rem;
+  letter-spacing: 3px;
+  padding: 9px 52px;
+  clip-path: polygon(18px 0%, 100% 0%, calc(100% - 18px) 100%, 0% 100%);
+  border: none;
+  transition: all var(--transition-fast);
+  box-shadow: 0 4px 14px rgba(219, 0, 17, 0.3);
+  transition-property: color, background-color, border-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-text-decoration-color, -webkit-backdrop-filter;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-text-decoration-color, -webkit-backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+  clip-path: polygon(10% 0%, 90% 0%, 100% 50%, 90% 100%, 10% 100%, 0% 50%);
+  padding-left: 2.5rem;
+  padding-right: 2.5rem;
+}
+
+.btn-register-footer:hover {
+  background: var(--hsbc-red-hover);
+  box-shadow: 0 6px 18px rgba(219, 0, 17, 0.45);
+}
+
+.footer-bottom-bar {
+  border-top: 1px solid #CBD5E1;
+  padding-top: 20px;
+  text-align: center;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+/* --- Bootstrap IBCP Register Modal Overrides --- */
+.ibcp-modal-card {
+  border-radius: var(--radius-lg);
+  border: none;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.15);
+  font-family: var(--font-primary);
+}
+
+.ibcp-modal-header {
+  padding: 28px 28px 0;
+}
+
+.modal-badge {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 800;
+  color: var(--hsbc-red);
+  background: var(--hsbc-red-light);
+  padding: 4px 12px;
+  border-radius: var(--radius-pill);
+  margin-bottom: 6px;
+  letter-spacing: 0.5px;
+}
+
+.ibcp-modal-title {
+  font-family: var(--font-heading);
+  font-size: 1.55rem;
+  font-weight: 800;
+  color: var(--text-dark);
+  margin-bottom: 2px;
+}
+
+.ibcp-modal-subtitle {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  margin-bottom: 0;
+}
+
+.ibcp-close-btn {
+  align-self: flex-start;
+  margin-top: 4px;
+  opacity: 0.5;
+  transition: opacity var(--transition-fast);
+}
+
+.ibcp-close-btn:hover {
+  opacity: 1;
+}
+
+.ibcp-modal-body {
+  padding: 20px 28px 28px;
+}
+
+.ibcp-label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-dark);
+  margin-bottom: 4px;
+}
+
+.ibcp-input {
+  font-family: var(--font-primary);
+  font-size: 0.95rem;
+  border: 1.5px solid #D1D5DB;
+  border-radius: var(--radius-sm);
+  padding: 10px 14px;
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+  color: var(--text-dark);
+}
+
+.ibcp-input:focus {
+  border-color: var(--hsbc-red);
+  box-shadow: 0 0 0 3px rgba(219, 0, 17, 0.15);
+  outline: none;
+}
+
+.ibcp-submit-btn {
+  background: var(--hsbc-red);
+  color: #FFF;
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: 0.95rem;
+  letter-spacing: 0.5px;
+  padding: 12px;
+  border: none;
+  border-radius: var(--radius-sm);
+  transition: background var(--transition-fast), transform var(--transition-fast);
+}
+
+.ibcp-submit-btn:hover {
+  background: var(--hsbc-red-hover);
+  transform: translateY(-1px);
+  color: #FFF;
+}
+
+/* Back to top button */
+.back-to-top-btn {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  width: 46px;
+  height: 46px;
+  background: var(--hsbc-red);
+  color: #FFF;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-md);
+  z-index: 900;
+  opacity: 0;
+  pointer-events: none;
+  transition: all var(--transition-fast);
+}
+
+.back-to-top-btn.visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.back-to-top-btn:hover {
+  transform: translateY(-4px);
+  background: var(--hsbc-red-hover);
+}
+
+/* --- Scroll Reveal Animations --- */
+.reveal-on-scroll {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal-on-scroll.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.delay-1 {
+  transition-delay: 0.15s;
+}
+
+.delay-2 {
+  transition-delay: 0.3s;
+}
+
+/* Responsive View Optimizations */
+@media (max-width:992px) {
+
+  /* --- HERO BANNER MOBILE --- */
+  .hero-section {
+    background: url('image/mob_banner.png') center/cover no-repeat !important;
+    min-height: 100vh;
+    padding: 24px 0;
+    display: flex;
+    align-items: stretch;
+  }
+
+  .hero-container {
+    padding: 0 60px 0 30px;
+    min-height: calc(100vh - 48px);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  /* Logos bar at top center on mobile */
+  .hero-top-logos {
+    position: static;
+    width: 100%;
+    display: flex;
+    justify-content: left;
+    margin-top: 30px;
+  }
+
+  .partner-pill {
+    padding: 6px 12px;
+    gap: 10px;
+  }
+
+  .hsbc-brand img,
+  .sattva-brand img,
+  .united-brand img {
+    height: 34px;
+  }
+
+  .v-divider {
+    height: 20px;
+  }
+
+  /* Hero header text in the middle/upper */
+  .hero-header-text {
+    margin-top: 20px;
+    max-width: 100%;
+    text-align: left;
+  }
+
+  .hero-title {
+    font-size: 2.2rem;
+    line-height: 1.2;
+    margin-bottom: 12px;
+  }
+
+  .hero-title br {
+    display: none;
+  }
+
+  .hero-subtitle {
+    font-size: 1.1rem;
+  }
+
+  /* Register button at bottom right on mobile */
+  .hero-bottom-action {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    margin-top: auto;
+    padding-bottom: 20px;
+  }
+
+  .btn-register-hero {
+    font-size: 0.95rem;
+    padding: 10px 32px;
+  }
+
+  /* --- INTRO SECTION MOBILE --- */
+  .intro-section {
+    padding: 48px 20px;
+  }
+
+  .intro-headline {
+    font-size: 1.8rem;
+    line-height: 1.3;
+  }
+
+  .intro-headline .highlight-badge {
+    display: block;
+    margin: 8px 0;
+    width: fit-content;
+    font-size: 1.4rem;
+    padding: 8px 16px;
+    border-radius: var(--radius-sm);
+    white-space: normal !important;
+  }
+
+  .desktop-hide-br {
+    display: inline !important;
+  }
+
+  /* --- BENEFITS / CARDS SECTION MOBILE --- */
+  .benefits-section {
+    padding: 48px 20px;
+  }
+
+  .benefits-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .benefit-card {
+    flex-direction: column !important;
+    align-items: stretch !important;
+  }
+
+  .card-image-wrap {
+    width: 100% !important;
+    height: 180px !important;
+  }
+
+  /* --- TIMELINE SECTION MOBILE --- */
+  .timeline-section {
+    padding: 48px 20px;
+  }
+
+  .timeline-line-track {
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    background: #000 !important;
+    /* Black timeline line track */
+    width: 2px;
+  }
+
+  .timeline-item {
+    flex-direction: column !important;
+    /* Stack items vertically */
+    align-items: center !important;
+    padding-left: 0 !important;
+    margin-bottom: 48px;
+    text-align: center;
+  }
+
+  .timeline-content {
+    width: 100% !important;
+    text-align: center !important;
+    padding: 0 !important;
+    margin-bottom: 12px;
+  }
+
+  .timeline-media {
+    display: none !important;
+    /* Hide media images in timeline on mobile */
+  }
+
+  /* Milestone hexagon shape + Vector1.png background centered in timeline */
+  .timeline-node {
+    position: relative !important;
+    left: 0 !important;
+    top: 0 !important;
+    transform: none !important;
+    width: 60px !important;
+    height: 52px !important;
+    background: #DB0011 !important;
+    /* Red background hexagon container */
+    clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%) !important;
+    z-index: 5;
+    margin: 0 auto 16px auto !important;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .timeline-node::before {
+    content: '' !important;
+    display: block !important;
+    width: 28px !important;
+    height: 28px !important;
+    background: url('image/Vector1.png') center/contain no-repeat !important;
+    position: static !important;
+    transform: none !important;
+    box-shadow: none !important;
+    border-radius: 0 !important;
+  }
+
+  /* Hide alternative node structures */
+  .item-left .timeline-node,
+  .item-right .timeline-node {
+    left: 0 !important;
+    right: auto !important;
+    width: 60px !important;
+    height: 52px !important;
+    background: #DB0011 !important;
+    clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%) !important;
+    margin: 0 auto 16px auto !important;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .item-left .timeline-node::before,
+  .item-right .timeline-node::before {
+    content: '' !important;
+    display: block !important;
+    width: 28px !important;
+    height: 28px !important;
+    background: url('image/Vector1.png') center/contain no-repeat !important;
+    position: static !important;
+    transform: none !important;
+    box-shadow: none !important;
+    border-radius: 0 !important;
+  }
+
+  .item-left .timeline-node::after,
+  .item-right .timeline-node::after,
+  .item-left .timeline-content::after,
+  .item-right .timeline-content::before {
+    display: none !important;
+  }
+
+  /* --- FOOTER SECTION MOBILE --- */
+  .main-footer {
+    padding: 32px 20px;
+  }
+
+  .footer-container {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center;
+    gap: 32px;
+  }
+
+  .footer-logos-group {
+    order: 3 !important;
+    /* Partner logos are third */
+    flex-direction: row !important;
+    align-items: center !important;
+    gap: 16px;
+  }
+
+  .f-divider {
+    display: none !important;
+    /* Hide vertical dividers on mobile */
+  }
+
+  .footer-qr-card {
+    order: 1 !important;
+    /* QR code / scan is first */
+    align-self: left !important;
+  }
+
+  .footer-cta-group {
+    order: 2 !important;
+    /* Tagline text / cta is second */
+    align-items: flex-start !important;
+    align-self: flex-start !important;
+  }
+
+  .footer-tagline {
+    text-align: left !important;
+  }
+
+  .faq-accordion-list {
+    width: 100%;
+  }
+}
+
+/* --- FOOTER SECTION MOBILE --- */
+.main-footer-mobile {
+  background: var(--bg-footer);
+  padding: 48px 24px;
+  border-top: none;
+  color: var(--text-dark);
+}
+
+.footer-container-mobile {
+  max-width: 480px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.footer-qr-card-mobile img {
+  height: 160px;
+  width: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+.footer-tagline-mobile {
+  font-family: var(--font-heading);
+  font-size: 1.3rem;
+  font-weight: 600;
+  line-height: 1.4;
+  color: var(--text-dark);
+  text-align: left;
+  margin-bottom: 24px;
+}
+
+.footer-logos-group-mobile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  width: 100%;
+}
+
+.footer-logos-group-mobile {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 20px;
+  width: 100%;
+}
+
+
+.f-partner-mobile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.f-supp-mobile {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #6B7280;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.hsbc-logo-img-mobile {
+  height: 40px !important;
+  width: auto;
+}
+
+.sattva-logo-img-mobile {
+  height: 38px !important;
+  width: auto;
+}
+
+.united-logo-img-mobile {
+  height: 38px !important;
+  width: auto;
+}
+
+.f-divider-mobile {
+  width: 40px;
+  height: 1px;
+  background: #E5E7EB;
+  margin: 4px 0;
+}
+
+/* --- TIMELINE MOBILE STYLING (MATCHING THE SCREENSHOT) --- */
+.timeline-section-mobile {
+  padding: 60px 20px;
+  background: var(--bg-white);
+}
+
+.mob-timeline-wrapper {
+  position: relative;
+  max-width: 480px;
+  margin: 0 auto;
+  padding-top: 20px;
+}
+
+/* Remove vertical black path line background */
+.mob-timeline-wrapper::before {
+  display: none !important;
+}
+
+.mob-timeline-item {
+  position: relative;
+  margin-bottom: 60px;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.mob-timeline-item:last-child {
+  margin-bottom: 0;
+}
+
+/* Vertical top connector line starting from path down to hexagon */
+.mob-connector-line {
+  width: 2px;
+  height: 30px;
+  background: #000;
+  margin-bottom: 0px;
+}
+
+/* Red hexagon background icon wrapper */
+.mob-hexagon-node {
+  width: 58px;
+  height: 50px;
+  background: #DB0011;
+  clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
+  box-shadow: 0 4px 10px rgba(219, 0, 17, 0.3);
+}
+
+.mob-node-icon {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+  filter: brightness(0) invert(1);
+}
+
+.mob-timeline-title {
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  font-weight: 900;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+  text-align: center;
+}
+
+.mob-timeline-title.text-red {
+  color: var(--hsbc-red);
+}
+
+.mob-timeline-dates {
+  display: block;
+  font-family: var(--font-primary);
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #6B7280;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+  text-align: center;
+}
+
+.mob-timeline-desc {
+  font-family: var(--font-primary);
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+  text-align: center;
+  max-width: 280px;
+  margin: 0 auto;
+}
+
+.faq-accordion-list {
+  width: 100%;
+}
+}
