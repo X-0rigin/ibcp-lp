@@ -1,4 +1,4 @@
-/* ==========================================================================
+﻿/* ==========================================================================
    India Business Case Programme (IBCP) Microsite - Master Stylesheet
    Matching standard mockup design UI exactly
    ========================================================================== */
@@ -87,13 +87,6 @@ button {
   color: var(--text-dark);
   margin-bottom: 40px;
   position: relative;
-}
-
-.section-title sup {
-  font-size: 0.5em;
-  font-weight: 700;
-  vertical-align: super;
-  line-height: 0;
 }
 
 .text-center {
@@ -259,27 +252,25 @@ button {
 }
 
 .intro-content-centered {
-  max-width: 97%;
-  width: 100%;
+  max-width: 880px;
   margin: 0;
   text-align: left;
 }
 
 .intro-headline {
   font-family: var(--font-heading);
-  font-size: 2.4rem;
+  font-size: 2.2rem;
   font-weight: 700;
-  line-height: 1.7;
+  line-height: 1.6;
   color: var(--text-dark);
-  margin-bottom: 40px;
+  margin-bottom: 28px;
   text-align: left;
-  width: 70%;
 }
 
 /* Highlight Badges */
 .highlight-badge {
   display: inline;
-  padding: 4px 12px;
+  padding: 4px 14px;
   border-radius: var(--radius-sm);
   color: #FFF;
   font-weight: 700;
@@ -305,12 +296,11 @@ button {
 
 .intro-paragraphs {
   text-align: left;
-  max-width: 100%;
-  width: 100%;
+  max-width: 900px;
   margin: 0;
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 16px;
   font-size: 1rem;
   color: var(--text-muted);
   line-height: 1.7;
@@ -393,102 +383,7 @@ button {
   line-height: 1.6;
 }
 
-/* --- 3. ELIGIBILITY CRITERIA SECTION --- */
-.eligibility-section {
-  background: var(--bg-white);
-  padding: 80px 24px;
-}
-
-/* /* 3-column grid; second row of 2 uses flexbox to center */
-.eligibility-grid {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 48px 40px;
-  max-width: 1000px;
-  margin: 0 auto;
-}
-
-.eligibility-card {
-  width: calc(33.333% - 27px);
-  /* 3 items per row with 40px gap */
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  gap: 20px;
-  transition: transform var(--transition-fast);
-}
-
-.eligibility-card:hover {
-  transform: translateY(-6px);
-}
-
-.eligibility-card--offset:nth-child(4),
-.eligibility-card--offset:nth-child(5) {
-  margin-left: 0;
-}
-
-/* Blue hexagon icon container */
-.elig-icon-hex {
-  width: 80px;
-  height: 72px;
-  background: var(--hsbc-blue);
-  clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-  transition: background var(--transition-fast), transform var(--transition-bounce);
-}
-
-.eligibility-card:hover .elig-icon-hex {
-  background: #003d80;
-  transform: scale(1.08);
-}
-
-.elig-svg-icon {
-  width: 44px;
-  height: 44px;
-  object-fit: contain;
-  display: block;
-}
-
-.elig-text {
-  font-size: 1rem;
-  color: var(--text-dark);
-  line-height: 1.6;
-  margin: 0;
-  max-width: 301px;
-}
-
-.elig-text strong {
-  font-weight: 700;
-  color: #000;
-}
-
-/* Responsive: stack to single column on mobile */
-@media (max-width: 768px) {
-  .eligibility-grid {
-    flex-direction: column;
-    align-items: center;
-    gap: 32px 20px;
-  }
-
-  .eligibility-card,
-  .eligibility-card--offset:nth-child(4),
-  .eligibility-card--offset:nth-child(5) {
-    width: 100%;
-  }
-}
-
-@media (max-width: 480px) {
-  .eligibility-grid {
-    grid-template-columns: 1fr !important;
-  }
-}
-
-/* --- 4. TIMELINE SECTION (Center Vertical Line & Dots) --- */
+/* --- 3. TIMELINE SECTION (SECTION 3 - Center Vertical Line & Dots) --- */
 .timeline-section {
   padding: 80px 24px;
   background: var(--bg-white);
@@ -497,29 +392,9 @@ button {
 
 .timeline-wrapper {
   position: relative;
-  padding: 60px 0;
+  padding: 30px 0;
   max-width: 1000px;
   margin: 0 auto;
-}
-
-/* Top and Bottom SVG cap dots for the timeline vertical line */
-.timeline-line-top-dot,
-.timeline-line-bottom-dot {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 32px;
-  height: auto;
-  z-index: 3;
-  display: block;
-}
-
-.timeline-line-top-dot {
-  top: 10px;
-}
-
-.timeline-line-bottom-dot {
-  bottom: 10px;
 }
 
 /* Center Pink/Red Vertical Line Track */
@@ -529,13 +404,19 @@ button {
   bottom: 15px;
   left: 50%;
   width: 2px;
-  background: var(--hsbc-red);
+  background: #FCA5A5;
   transform: translateX(-50%);
   z-index: 1;
 }
 
 .timeline-line-progress {
-  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 0%;
+  background: var(--hsbc-red);
+  transition: height 0.1s linear;
 }
 
 /* Alternating Timeline Items */
@@ -592,6 +473,9 @@ button {
 /* ── TIMELINE NODE & CONNECTOR ─────────────────────────────────────────────
    DOT appears at the TEXT/CONTENT edge (not at the center line).
    LINE extends from the dot toward the center vertical line.
+
+   Left item visual:  [TEXT] ●────────────── │ (center)
+   Right item visual: (center) │ ────────────●  [TEXT]
    ─────────────────────────────────────────────────────────────────────────── */
 
 /* Base node: horizontal connector line spanning gap from content edge → center */
@@ -607,40 +491,52 @@ button {
 /* LEFT ITEM: line starts at content right edge (44%) and ends at center (50%) */
 .item-left .timeline-node {
   left: 45%;
+  /* content right edge */
   right: 50%;
+  /* stops exactly at center — responsive at any width */
 }
 
-.item-left .timeline-node .node-dot {
+/* Dot for LEFT items: circle at the LEFT end of the line (content/text side) */
+.item-left .timeline-node::before {
+  content: '';
   position: absolute;
   left: 0;
   top: 50%;
   transform: translate(-50%, -50%);
-  width: 24px;
-  height: 24px;
-  display: block !important;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--hsbc-red);
+  box-shadow: 0 0 0 2px #fff;
   z-index: 5;
 }
 
 /* RIGHT ITEM: line starts at center (50%) and ends at content left edge (~56%) */
 .item-right .timeline-node {
   left: 50%;
+  /* starts at center */
   right: 45%;
+  /* ends at content left edge — responsive at any width */
 }
 
-.item-right .timeline-node .node-dot {
+/* Dot for RIGHT items: circle at the RIGHT end of the line (content/text side) */
+.item-right .timeline-node::after {
+  content: '';
   position: absolute;
   right: 0;
   top: 50%;
   transform: translate(50%, -50%);
-  width: 24px;
-  height: 24px;
-  display: block !important;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--hsbc-red);
+  box-shadow: 0 0 0 2px #fff;
   z-index: 5;
 }
 
-/* node-dot: shown as image — positioned by parent rules above */
+/* node-dot div (HTML): hidden — dot is now created via CSS pseudo-elements above */
 .node-dot {
-  object-fit: contain;
+  display: none;
 }
 
 /* Remove old content-based connector pseudo-elements — connector is now on .timeline-node */
@@ -675,6 +571,7 @@ button {
   font-size: 14px;
   font-weight: 500;
   color: #6B7280;
+  text-transform: uppercase;
   letter-spacing: 0.3px;
   margin-bottom: 4px;
 }
@@ -709,7 +606,7 @@ button {
 
 /* --- 4. VIDEO GLIMPSES SECTION --- */
 .glimpses-section {
-  background: var(--bg-white);
+  background: var(--bg-grey);
   padding: 80px 24px;
 }
 
@@ -764,101 +661,7 @@ button {
   transform: scale(1.1);
 }
 
-/* --- 5. PROGRAMME OUTREACH SECTION --- */
-
-/* #programme-outreach .section-container {
-  max-width: 1000px !important;
-  margin: 0 auto;
-} */
-
-.programme-outreach-section {
-  background: #DDDDDD;
-  padding: 80px 24px;
-}
-
-.outreach-headline {
-  font-family: var(--font-heading);
-  font-size: 2.2rem;
-  font-weight: 900;
-  color: var(--text-dark);
-  line-height: 1.25;
-  margin-bottom: 48px;
-  /* text-decoration: underline; */
-  text-underline-offset: 4px;
-  max-width: 800px;
-}
-
-.outreach-body {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 48px;
-  align-items: start;
-}
-
-.outreach-text {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
-.outreach-text p {
-  font-size: 1rem;
-  color: #000;
-  line-height: 1.75;
-  margin: 0;
-}
-
-.outreach-text strong {
-  font-weight: 700;
-}
-
-.outreach-media {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-}
-
-.outreach-img {
-  width: 100%;
-  height: auto;
-  border-radius: var(--radius-md);
-  display: block;
-  box-shadow: var(--shadow-md);
-  object-fit: cover;
-}
-
-.outreach-caption {
-  font-size: 0.95rem;
-  color: #000;
-  line-height: 1.65;
-  margin: 0;
-  padding: 0 10px;
-}
-
-.outreach-email {
-  color: var(--text-dark);
-  font-weight: 500;
-  text-decoration: underline;
-  text-underline-offset: 2px;
-  word-break: break-all;
-  transition: color var(--transition-fast);
-}
-
-.outreach-email:hover {
-  color: var(--hsbc-red);
-}
-
-@media (max-width: 768px) {
-  .outreach-body {
-    grid-template-columns: 1fr;
-  }
-
-  .outreach-headline {
-    font-size: 1.5rem;
-  }
-}
-
-/* --- 6. FAQ SECTION (Bootstrap Accordion) --- */
+/* --- 5. FAQ SECTION (Bootstrap Accordion) --- */
 .faq-section {
   background: var(--bg-white);
   padding: 80px 24px;
@@ -931,7 +734,7 @@ button {
 }
 
 .faq-accordion-list {
-  width: 100%;
+  width: 90%;
 }
 
 .faq-accordion-list .accordion-body.faq-answer-content {
@@ -1216,23 +1019,21 @@ button {
 /* Back to top button */
 .back-to-top-btn {
   position: fixed;
-  bottom: 28px;
-  right: 28px;
-  width: 48px;
-  height: 48px;
+  bottom: 24px;
+  right: 24px;
+  width: 46px;
+  height: 46px;
   background: var(--hsbc-red);
   color: #FFF;
   border-radius: 50%;
-  border: 2px solid rgba(255, 255, 255, 0.25);
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 4px 16px rgba(219, 0, 17, 0.35);
+  box-shadow: var(--shadow-md);
   z-index: 900;
   opacity: 0;
   pointer-events: none;
-  transition: opacity var(--transition-fast), transform var(--transition-bounce), background var(--transition-fast), box-shadow var(--transition-fast);
-  font-size: 1rem;
+  transition: all var(--transition-fast);
 }
 
 .back-to-top-btn.visible {
@@ -1241,9 +1042,8 @@ button {
 }
 
 .back-to-top-btn:hover {
-  transform: translateY(-4px) scale(1.08);
+  transform: translateY(-4px);
   background: var(--hsbc-red-hover);
-  box-shadow: 0 8px 24px rgba(219, 0, 17, 0.5);
 }
 
 /* --- Scroll Reveal Animations --- */
@@ -1279,41 +1079,20 @@ button {
   }
 
   .hero-container {
-    padding: 0 40px 0 24px;
+    padding: 0 60px 0 30px;
     min-height: calc(100vh - 48px);
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
+    justify-content: space-between;
   }
 
-  /* 1. Title first */
-  .hero-header-text {
-    order: 1;
-    margin-top: 24px;
-    max-width: 100%;
-    text-align: left;
-  }
-
-  /* 2. Logos second */
+  /* Logos bar at top center on mobile */
   .hero-top-logos {
-    order: 2;
     position: static;
     width: 100%;
     display: flex;
-    justify-content: flex-start;
-    margin-top: 20px;
-  }
-
-  /* 3. Register button third, pushed to bottom, shifted slightly left */
-  .hero-bottom-action {
-    order: 3;
-    display: flex;
-    justify-content: flex-end;
-    padding-right: 24px;
-    /* shift left from right edge */
-    width: 100%;
-    margin-top: auto;
-    padding-bottom: 28px;
+    justify-content: left;
+    margin-top: 30px;
   }
 
   .partner-pill {
@@ -1331,6 +1110,13 @@ button {
     height: 20px;
   }
 
+  /* Hero header text in the middle/upper */
+  .hero-header-text {
+    margin-top: 20px;
+    max-width: 100%;
+    text-align: left;
+  }
+
   .hero-title {
     font-size: 2.2rem;
     line-height: 1.2;
@@ -1343,6 +1129,15 @@ button {
 
   .hero-subtitle {
     font-size: 1.1rem;
+  }
+
+  /* Register button at bottom right on mobile */
+  .hero-bottom-action {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    margin-top: auto;
+    padding-bottom: 20px;
   }
 
   .btn-register-hero {
@@ -1492,72 +1287,6 @@ button {
     display: none !important;
   }
 
-  /* --- GLIMPSES/VIDEO SECTION MOBILE --- */
-  .glimpses-section {
-    padding: 40px 16px;
-  }
-
-  .glimpses-section .section-title {
-    font-size: 1.8rem;
-    margin-bottom: 24px;
-  }
-
-  .video-preview-card {
-    border-radius: var(--radius-md);
-    max-width: 100%;
-  }
-
-  .btn-play-trigger {
-    width: 56px;
-    height: 56px;
-    font-size: 1.2rem;
-  }
-
-  /* --- OUTREACH SECTION MOBILE --- */
-  .programme-outreach-section {
-    padding: 48px 20px;
-  }
-
-  .outreach-headline {
-    font-size: 1.5rem;
-    margin-bottom: 28px;
-  }
-
-  .outreach-body {
-    grid-template-columns: 1fr;
-    gap: 28px;
-  }
-
-  .outreach-img {
-    max-height: 240px;
-    object-fit: cover;
-  }
-
-  /* --- ELIGIBILITY MOBILE --- */
-  .eligibility-section {
-    padding: 48px 16px;
-  }
-
-  .eligibility-grid {
-    grid-template-columns: 1fr !important;
-    gap: 36px 0 !important;
-    max-width: 320px;
-    margin: 0 auto;
-  }
-
-  .eligibility-card,
-  .eligibility-card--offset:nth-child(4),
-  .eligibility-card--offset:nth-child(5) {
-    grid-column: 1 / -1 !important;
-    align-items: center;
-    text-align: center;
-  }
-
-  .elig-text {
-    max-width: 100%;
-    text-align: center;
-  }
-
   /* --- FOOTER SECTION MOBILE --- */
   .main-footer {
     padding: 32px 20px;
@@ -1604,15 +1333,6 @@ button {
   .faq-accordion-list {
     width: 100%;
   }
-
-  .intro-headline {
-    width: 100%;
-  }
-
-  .eligibility-card--offset:nth-child(4) {
-    margin-left: calc(0%);
-  }
-
 }
 
 /* --- FOOTER SECTION MOBILE --- */
@@ -1705,43 +1425,24 @@ button {
 /* --- TIMELINE MOBILE STYLING (MATCHING THE SCREENSHOT) --- */
 .timeline-section-mobile {
   padding: 60px 20px;
-  background: #E5E7EB;
+  background: var(--bg-white);
 }
 
 .mob-timeline-wrapper {
   position: relative;
   max-width: 480px;
   margin: 0 auto;
-  padding-bottom: 30px;
+  padding-top: 20px;
 }
 
-/* Removed continuous vertical black path line background */
+/* Remove vertical black path line background */
 .mob-timeline-wrapper::before {
-  display: none;
-}
-
-.mob-timeline-top-dot,
-.mob-timeline-bottom-dot {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 32px;
-  height: auto;
-  z-index: 3;
-}
-
-.mob-timeline-top-dot {
-  top: 0px;
-}
-
-.mob-timeline-bottom-dot {
-  bottom: -10px;
-  display: none;
+  display: none !important;
 }
 
 .mob-timeline-item {
   position: relative;
-  margin-bottom: 20px;
+  margin-bottom: 60px;
   z-index: 2;
   display: flex;
   flex-direction: column;
@@ -1752,12 +1453,12 @@ button {
   margin-bottom: 0;
 }
 
-/* Individual connector line */
+/* Vertical top connector line starting from path down to hexagon */
 .mob-connector-line {
   width: 2px;
-  height: 40px;
+  height: 30px;
   background: #000;
-  margin: 0 auto;
+  margin-bottom: 0px;
 }
 
 /* Red hexagon background icon wrapper */
@@ -1797,9 +1498,10 @@ button {
 .mob-timeline-dates {
   display: block;
   font-family: var(--font-primary);
-  font-size: 0.85rem;
-  font-weight: 400;
-  color: var(--text-dark);
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #6B7280;
+  text-transform: uppercase;
   margin-bottom: 6px;
   text-align: center;
 }
@@ -1816,4 +1518,5 @@ button {
 
 .faq-accordion-list {
   width: 100%;
+}
 }
