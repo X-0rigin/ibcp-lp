@@ -167,17 +167,17 @@ button {
 }
 
 .hsbc-brand img {
-  height: 40px;
+  height: 45px;
   width: auto;
 }
 
 .sattva-brand img {
-  height: 40px;
+  height: 45px;
   width: auto;
 }
 
 .united-brand img {
-  height: 40px;
+  height: 45px;
   width: auto;
 }
 
@@ -273,7 +273,7 @@ button {
   color: var(--text-dark);
   margin-bottom: 40px;
   text-align: left;
-  width: 70%;
+  width: 85%;
 }
 
 /* Highlight Badges */
