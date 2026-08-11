@@ -894,7 +894,7 @@ button {
 .faq-accordion-list .faq-question-btn {
   background: transparent;
   font-family: var(--font-primary);
-  font-size: 1.05rem;
+  font-size: 1.2rem;
   font-weight: 600;
   color: var(--text-dark);
   padding: 20px 0;
@@ -956,7 +956,7 @@ button {
 }
 
 .faq-accordion-list .faq-answer-content p {
-  font-size: 0.95rem;
+  font-size: 1.2rem;
   color: #000;
   line-height: 1.65;
   margin: 0;
@@ -971,7 +971,7 @@ button {
 }
 
 .faq-list li {
-  font-size: 0.95rem;
+  font-size: 1.2rem;
   color: var(--text-muted);
   line-height: 1.65;
   padding-left: 4px;
@@ -1868,4 +1868,16 @@ button {
 
 .faq-accordion-list {
   width: 100%;
+}
+
+/* --- VIDEO MODAL RESPONSIVENESS --- */
+.video-modal-dialog {
+  max-width: 70%;
+}
+
+@media (max-width: 768px) {
+  .video-modal-dialog {
+    max-width: 95% !important;
+    margin: 1rem auto;
+  }
 }
